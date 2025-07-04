@@ -9,10 +9,11 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
   <link href="./assets/styles.css" rel="stylesheet">
+  <link href="./assets/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="container navbar">
       <div class="logo">
         <a href="#home">
@@ -36,7 +37,34 @@
         </ul>
       </nav>
     </div>
+  </header> -->
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="#home">
+          <img src="ngo_logo.jpg" alt="Iman Jibril Foundation Logo">
+        </a>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+      <nav id="main-nav" class="">
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#impact">Our Impact</a></li>
+          <li><a href="#different">What Makes Us Different</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#map">Our Map</a></li>
+          <li><a href="#help">How You Can Help</a></li>
+          <li><a href="#partners">Our Partners</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
 
   <main>
     <section class="hero" id="home">
@@ -259,15 +287,32 @@
     </div>
   </footer>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
   <script>
     // JavaScript for mobile menu toggle
+    /*document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mainNav = document.getElementById('main-nav');
+
+      mobileMenu.addEventListener('click', function () {
+        mainNav.classList.toggle('active');
+      });
+    });*/
+
     document.addEventListener('DOMContentLoaded', function () {
       const mobileMenu = document.getElementById('mobile-menu');
       const mainNav = document.getElementById('main-nav');
 
       mobileMenu.addEventListener('click', function () {
         mainNav.classList.toggle('active');
+      });
+
+      // Optional: Close menu when a nav link is clicked (on mobile)
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('active');
+        });
       });
     });
   </script>
