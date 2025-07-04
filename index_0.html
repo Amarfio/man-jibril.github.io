@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Jibril Foundation</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #366030;
+      /* Dark green from logo */
+      --secondary-color: #6a9c3b;
+      /* Lighter green from logo */
+      --text-color: #333;
+      --light-grey: #f4f4f4;
+      --white: #fff;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+      /* Prevent horizontal scroll on small screens */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 15px 0;
+      border-bottom: 1px solid var(--light-grey);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 80px;
+      /* Increased logo size */
+      max-width: 100%;
+    }
+
+    nav {
+      flex-grow: 1;
+      text-align: right;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      transition: color 0.3s ease;
+      padding: 5px 0;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Hamburger Menu for Mobile (newly added) */
+    .menu-toggle {
+      display: none;
+      /* Hidden by default */
+      font-size: 2em;
+      cursor: pointer;
+      color: var(--primary-color);
+      margin-left: 20px;
+      /* Space from logo */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x800?text=Inspiring+Future+Generations') no-repeat center center/cover;
+      color: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 450px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: 3em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin: 8px;
+    }
+
+    .button:hover {
+      background-color: var(--primary-color);
+    }
+
+    .button.outline {
+      background-color: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .button.outline:hover {
+      background-color: var(--white);
+      color: var(--secondary-color);
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 0;
+    }
+
+    section:nth-of-type(even) {
+      background-color: var(--light-grey);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2em;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background-color: var(--secondary-color);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* About Us */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Our Impact */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .impact-item {
+      background-color: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .impact-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .impact-item h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+    }
+
+    .impact-item h3::before {
+      content: '•';
+      color: var(--secondary-color);
+      font-size: 1.4em;
+      margin-right: 8px;
+    }
+
+    /* What Makes Us Different */
+    .difference-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .difference-item {
+      background-color: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .difference-item .icon {
+      font-size: 1.8em;
+      color: var(--secondary-color);
+      margin-right: 12px;
+      min-width: 35px;
+      text-align: center;
+    }
+
+    .difference-item h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.1em;
+    }
+
+    /* Mission & Vision */
+    .mv-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .mv-card {
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .mv-card h3 {
+      color: var(--secondary-color);
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+
+    /* How You Can Help */
+    .help-content {
+      text-align: center;
+    }
+
+    .help-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      margin-bottom: 40px;
+    }
+
+    .help-list li {
+      background-color: var(--white);
+      padding: 12px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      font-weight: 600;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      font-size: 0.95em;
+    }
+
+    .help-list li::before {
+      content: '✨';
+      margin-right: 8px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* Our Partners */
+    .partners-logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .partners-logo-grid img {
+      max-height: 80px;
+      width: auto;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    .partners-logo-grid img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Contact Us */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      text-align: center;
+    }
+
+    .contact-item {
+      flex: 1;
+      min-width: 220px;
+      padding: 18px;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-item i {
+      font-size: 2em;
+      color: var(--secondary-color);
+      margin-bottom: 12px;
+    }
+
+    .contact-item h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    .contact-item p {
+      margin: 0;
+      font-size: 0.9em;
+    }
+
+    /* Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery-item {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      /* Fixed height for consistency */
+      object-fit: cover;
+      /* Ensures images cover the area without distortion */
+      display: block;
+    }
+
+    .gallery-item-caption {
+      padding: 15px;
+      font-size: 0.9em;
+      color: var(--text-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 50px;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      .logo {
+        flex-grow: 1;
+        text-align: left;
+      }
+
+      nav {
+        order: 3;
+        flex-basis: 100%;
+        text-align: center;
+        display: none;
+        /* Hide navigation by default */
+      }
+
+      nav.active {
+        display: block;
+        /* Show navigation when active */
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding: 60px 15px;
+        min-height: 350px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 0.9em;
+      }
+
+      .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+      }
+
+      .about-content,
+      .mv-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+        order: -1;
+      }
+
+      .contact-info {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 15px;
+        font-size: 0.9em;
+      }
+
+      .impact-item,
+      .difference-item,
+      .mv-card,
+      .contact-item {
+        padding: 20px;
+      }
+
+      .help-list li {
+        font-size: 0.9em;
+        padding: 10px 15px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      .hero p {
+        font-size: 0.85em;
+      }
+
+      .section-title {
+        font-size: 1.8em;
+      }
+
+      .impact-item h3,
+      .difference-item h3,
+      .mv-card h3 {
+        font-size: 1.1em;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        /* Stack images on very small screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <a href="#home">
+          <img src="ngo_logo.jpg" alt="Iman Jibril Foundation Logo">
+        </a>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#impact">Our Impact</a></li>
+          <li><a href="#different">What Makes Us Different</a></li>
+          <li><a href="#mission">Mission & Vision</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#help">How You Can Help</a></li>
+          <li><a href="#partners">Our Partners</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Building for Generations, Not Just for Today.</h1>
+      <p>Restoring hope, dignity, and opportunity for underserved communities across Africa.</p>
+      <div class="cta-buttons">
+        <a href="#help" class="button">Make a Donation</a>
+        <a href="#about" class="button outline">Learn More</a>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>The Iman Jibril Charity Foundation was founded in 2022 by Mrs. Ikram Ahmed in honor of her children, Iman
+            and Jibril. What began as a mother’s personal mission is now a continent-wide movement to restore hope,
+            dignity, and opportunity for underserved communities.</p>
+          <p>From its roots in the Eastern Region of Ghana, the Foundation has grown into a force for change — building
+            schools, clinics, and programs that touch thousands of lives. Inspired by Ikram’s own journey from refugee
+            child to global entrepreneur, our work is a living legacy of resilience and compassion.</p>
+          <p><strong>We don’t do charity as usual. We build for generations.</strong></p>
+        </div>
+        <div class="about-image">
+          <img src="https://via.placeholder.com/400x300?text=Mrs.+Ikram+Ahmed" alt="Mrs. Ikram Ahmed">
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="container">
+      <h2 class="section-title">Our Impact So Far</h2>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <h3>🎉 Feeding Festival & Birthday Drive</h3>
+          <p>On Iman’s 1st birthday, over 800 children in Asuboi were fed, given backpacks, supplies, and treated to
+            haircuts and games — a celebration of joy and dignity.</p>
+        </div>
+        <div class="impact-item">
+          <h3>🏥 Mother Care Drive</h3>
+          <p>On our 3rd anniversary, we delivered essential newborn kits and mother support packages to Amasaman
+            Hospital.</p>
+        </div>
+        <div class="impact-item">
+          <h3>🕌 School, Clinic & Mosque in Asuboi</h3>
+          <p>Through our partnership with Qatar Charity Ghana and JBC Charity, we constructed a permanent facility
+            offering education, healthcare, and spiritual care for the community.</p>
+        </div>
+        <div class="impact-item">
+          <h3>🌍 Pan-African Expansion</h3>
+          <p>We’re identifying vulnerable communities across Africa to expand our model of education, health access, and
+            job creation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="different" class="container">
+      <h2 class="section-title">We’re Not Like the Rest</h2>
+      <div class="difference-grid">
+        <div class="difference-item">
+          <span class="icon">💡</span>
+          <div>
+            <h3>Legacy-Driven, Not Trend-Driven</h3>
+            <p>This isn’t a PR campaign — it’s a mother’s lifelong promise to children like hers.</p>
+          </div>
+        </div>
+        <div class="difference-item">
+          <span class="icon">🏗️</span>
+          <div>
+            <h3>We Build, Not Band-Aid</h3>
+            <p>Schools. Clinics. Mosques. Programs. We don’t patch — we plant and grow.</p>
+          </div>
+        </div>
+        <div class="difference-item">
+          <span class="icon">🎁</span>
+          <div>
+            <h3>All Forms of Giving Matter</h3>
+            <p>We welcome school supplies, laptops, medicine, diapers, hygiene kits — and funds. Every gift saves lives.
+            </p>
+          </div>
+        </div>
+        <div class="difference-item">
+          <span class="icon">🚀</span>
+          <div>
+            <h3>Empowering the 2025 Generation</h3>
+            <p>Digital training, job mentorship, youth and women’s empowerment — preparing today’s youth for tomorrow’s
+              challenges.</p>
+          </div>
+        </div>
+        <div class="difference-item">
+          <span class="icon">🤝</span>
+          <div>
+            <h3>Community-Led Development</h3>
+            <p>We don’t assume what’s needed. We partner with local leaders and listen first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission" class="container">
+      <h2 class="section-title">Mission & Vision</h2>
+      <div class="mv-container">
+        <div class="mv-card">
+          <h3>Mission</h3>
+          <p>To transform the lives of underprivileged children, women, and youth by providing access to quality
+            education, healthcare, skills development, and community support — creating sustainable change, not cycles
+            of dependency.</p>
+        </div>
+        <div class="mv-card">
+          <h3>Vision</h3>
+          <p>A future where every African child and mother has the tools to rise above poverty, reclaim dignity, and
+            reach their full potential — no matter where they start.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="container">
+      <h2 class="section-title">Our Gallery</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+1" alt="Feeding Festival Event">
+          <div class="gallery-item-caption">Feeding Festival & Birthday Drive in Asuboi</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+2" alt="Mother Care Drive">
+          <div class="gallery-item-caption">Mother Care Drive at Amasaman Hospital</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+3" alt="Asuboi School Construction">
+          <div class="gallery-item-caption">Construction of School, Clinic & Mosque in Asuboi</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+4" alt="Community Engagement">
+          <div class="gallery-item-caption">Community Engagement and Outreach Programs</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+5" alt="Children Learning">
+          <div class="gallery-item-caption">Children benefiting from our education programs</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/400x300?text=Gallery+Image+6" alt="Healthcare Access">
+          <div class="gallery-item-caption">Providing essential healthcare access</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help" class="container">
+      <h2 class="section-title">You Can Change a Life Today</h2>
+      <div class="help-content">
+        <p>We accept:</p>
+        <ul class="help-list">
+          <li>Financial Donations (one-time or monthly)</li>
+          <li>In-Kind Support (school supplies, medical kits, hygiene items, tech)</li>
+          <li>Corporate Sponsorships</li>
+          <li>Partnerships in education, job creation, healthcare</li>
+          <li>Volunteers & Advocates</li>
+        </ul>
+        <div class="cta-buttons">
+          <a href="#" class="button">Make a Donation</a>
+          <a href="#" class="button outline">Partner With Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="container">
+      <h2 class="section-title">Our Partners</h2>
+      <div class="partners-logo-grid">
+        <img src="https://via.placeholder.com/200x100?text=Qatar+Charity+Ghana" alt="Qatar Charity Ghana Logo">
+        <img src="https://via.placeholder.com/200x100?text=JBC+Charity" alt="JBC Charity Logo">
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Head Office</h3>
+          <p>Iris Street, Accra, Ghana</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <h3>Phone/WhatsApp</h3>
+          <p>+233 55 613 7874</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>donte@theimangroup.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <h3>Instagram</h3>
+          <p><a href="https://www.instagram.com/imanjfoundation" target="_blank"
+              style="color: var(--primary-color); text-decoration: none;">@imanjfoundation</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Iman Jibril Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // JavaScript for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mainNav = document.getElementById('main-nav');
+
+      mobileMenu.addEventListener('click', function () {
+        mainNav.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
