@@ -59,7 +59,7 @@ header {
 }
 
 .logo img {
-  height: 80px;
+  height: 100px;
   /* Increased logo size */
   max-width: 100%;
 }
@@ -96,7 +96,7 @@ nav ul li a:hover {
 
 /* Hamburger Menu for Mobile */
 .menu-toggle {
-  display: none;
+  display: block;
   /* Hidden by default */
   font-size: 2em;
   cursor: pointer;
@@ -107,9 +107,8 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../media/images/jibril_image24.jpg") no-repeat center center/cover;
-  /* Updated background image */
+  position: relative; /* Needed for absolute positioning of video and overlay */
+  overflow: hidden; /* Hide overflowing video parts */
   color: var(--white);
   text-align: center;
   padding: 80px 20px;
@@ -118,6 +117,20 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   min-height: 450px;
+  /* No background image here anymore, video will cover */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2; /* Behind content, behind overlay */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensures video covers the area */
 }
 
 .hero h1 {
@@ -132,6 +145,24 @@ nav ul li a:hover {
   max-width: 700px;
   margin-bottom: 30px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ); /* Dark overlay for text readability */
+  z-index: -1; /* Between video and content */
+}
+
+.hero-content {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 1;
 }
 
 .button {
@@ -484,7 +515,7 @@ footer p {
     /* Hide navigation by default */
   }
 
-  nav.active {
+  #main-nav.active {
     display: block;
     /* Show navigation when active */
   }
