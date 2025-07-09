@@ -5,83 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iman Jibril Foundation</title>
-  <link
+  <!-- <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet">
+    <link href="./assets/font-awesome.min.css" rel="stylesheet"> -->
   <link href="./assets/styles.css" rel="stylesheet">
-  <link href="./assets/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p1Cm+M4gy2uWI4kDqm/9uRmgSCvA8HW7kkfg5wM+YC9pB8Hy11Ti3DGJsKkp+O38iCr1ZiYQ5YHW85rZf4d0NQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <!-- <header>
-    <div class="container navbar">
-      <div class="logo">
-        <a href="#home">
-          <img src="ngo_logo.jpg" alt="Iman Jibril Foundation Logo">
-        </a>
-      </div>
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars "></i>
-      </div>
-      <nav id="main-nav">
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#impact">Our Impact</a></li>
-          <li><a href="#different">What Makes Us Different</a></li>
-          <li><a href="#mission">Mission & Vision</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#map">Our Map</a></li>
-          <li><a href="#help">How You Can Help</a></li>
-          <li><a href="#partners">Our Partners</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header> -->
 
-  <header>
-    <div class="container navbar">
-      <div class="logo">
-        <a href="#home">
-          <img src="ngo_logo.jpg" alt="Iman Jibril Foundation Logo">
-        </a>
-      </div>
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fa fa-bars"></i>
-      </div>
-      <nav id="main-nav" class="">
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#impact">Our Impact</a></li>
-          <li><a href="#different">What Makes Us Different</a></li>
-          <li><a href="#mission">Mission & Vision</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#map">Our Map</a></li>
-          <li><a href="#help">How You Can Help</a></li>
-          <li><a href="#partners">Our Partners</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-      </nav>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./media/images/imanJ.png" alt="ImanJibril">
+
+    </div>
+    <div class="nav-buttons">
+      <a class="btn volunteer" href="#" style="text-decoration:none">VOLUNTEER</a>
+      <a class="btn donate" href="#" style="text-decoration: none">DONATE</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Making the world a better place for all </h1>
+      <button class="btn watch-more">JOIN US </button>
+    </div>
+
+    <div class="slideshow">
+      <div class="slide active" style="background-image:url('./media/images/jibril_image4.jpg')"></div>
+      <div class="slide" style="background-image:url('./media/images/jibril_image2.jpg')"></div>
+      <div class="slide" style="background-image:url('./media/images/jibril_image3.jpg')"></div>
+      <div class="slide" style="background-image:url('./media/images/jibril_image1.jpg')"></div>
+      <div class="slide" style="background-image:url('./media/images/jibril_image2.jpeg')"></div>
     </div>
   </header>
 
 
   <main>
-    <section class="hero" id="home">
-      <video autoplay loop muted playsinline class="hero-video">
-        <source src="./media/videos/jibril_vid1.mp4" type="video/mp4">
-        <img src="#" />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1>Building for Generations, Not Just for Today.</h1>
-        <p>Restoring hope, dignity, and opportunity for underserved communities across Africa.</p>
-        <div class="cta-buttons">
-          <a href="#help" class="button">Make a Donation</a>
-          <a href="#about" class="button outline">Learn More</a>
-        </div>
-      </div>
-    </section>
+
 
     <section id="about" class="container">
       <h2 class="section-title">About Us</h2>
@@ -238,22 +209,23 @@
           <li>Partnerships in education, job creation, healthcare</li>
           <li>Volunteers & Advocates</li>
         </ul>
-        <div class="cta-buttons">
+        <!-- <div class="cta-buttons">
           <a href="#" class="button">Make a Donation</a>
           <a href="#" class="button outline">Partner With Us</a>
-        </div>
+        </div> -->
       </div>
     </section>
 
-    <section id="partners" class="container">
-      <h2 class="section-title">Our Partners</h2>
+    <section class="container">
+      <h2 class="section-title" id="partners">Our Partners</h2>
       <div class="partners-logo-grid">
         <img src="https://via.placeholder.com/200x100?text=Qatar+Charity+Ghana" alt="Qatar Charity Ghana Logo">
         <img src="https://via.placeholder.com/200x100?text=JBC+Charity" alt="JBC Charity Logo">
       </div>
     </section>
 
-    <section id="contact" class="container">
+
+    <!-- <section id="contact" class="container">
       <h2 class="section-title">Contact Us</h2>
       <div class="contact-info">
         <div class="contact-item">
@@ -278,44 +250,56 @@
               style="color: var(--primary-color); text-decoration: none;">@imanjfoundation</a></p>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Iman Jibril Foundation. All rights reserved.</p>
+  <footer class="footer-dark">
+    <div class="footer-logo">
+      <img src="./media/images/imanJ.png" alt="Iman Jibril Foundation Logo" />
     </div>
+
+    <div class="footer-container">
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-people-group" style="font-size:15px; color:aliceblue;"></i> Iman Jibril Foundation<br /></p>
+        <p><i class="fas fa-map-marker-alt" style="color:beige;"></i> Head Office: Iris Street, Accra, Ghana</p>
+        <p><i class="fas fa-phone" style="color:beige;"></i> Phone/WhatsApp: ‪+233 55 613 7874‬</p>
+        <p><i class="fas fa-envelope" style="color:beige;"></i> <a href="#">donte@theimangroup.com</a> </p>
+
+
+
+
+        <p><i class="fab fa-instagram" style="height:35px;"> </i> <a href="#">@imanjfoundation</a></p>
+        <p><em>An Initiative of Iman Jibril Foundation</em></p>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-column">
+        <h4>Other Links</h4>
+        <ul>
+          <li><a href="#">Mother Care Drive</a></li>
+          <li><a href="#">Feeding Festival & Birthday Drive</a></li>
+          <li><a href="#">How You Can Help</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-column">
+        <h4>Stay Informed</h4>
+        <p>Join our email newsletter to learn more.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">JOIN NOW</button>
+        </form>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">Iman Jibril Foundation. All Rights Reserved.</div>
+    </div>
+    <hr class="white-line" />
   </footer>
 
   <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-  <script>
-    // JavaScript for mobile menu toggle
-    /*document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mainNav = document.getElementById('main-nav');
-
-      mobileMenu.addEventListener('click', function () {
-        mainNav.classList.toggle('active');
-      });
-    });*/
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mainNav = document.getElementById('main-nav');
-
-      mobileMenu.addEventListener('click', function () {
-        mainNav.classList.toggle('active');
-      });
-
-      // Optional: Close menu when a nav link is clicked (on mobile)
-      const navLinks = mainNav.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('active');
-        });
-      });
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 
 </html>
