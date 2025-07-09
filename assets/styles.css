@@ -488,6 +488,15 @@ section:nth-of-type(even) {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/*SECTION WITH MULTIPLE SLIDES*/
+/* TWO‐COLUMN LAYOUT */
+.content {
+  display: flex;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 10px auto;
+}
+
 /* LEFT PANEL */
 .content-text {
   flex: 1;
@@ -658,6 +667,19 @@ section:nth-of-type(even) {
 .footer-column ul li {
   margin-bottom: 8px;
   text-align: left;
+}
+
+.footer-last {
+  /* background-color: var(--primary-color); */
+  color: var(--white);
+  text-align: center;
+  padding: 25px 20px;
+  /* margin-top: 50px; */
+  /* font-size: 0.85em; */
+}
+
+.footer-last p {
+  margin: 0;
 }
 
 .newsletter-form {
